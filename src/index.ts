@@ -1,4 +1,4 @@
-import Line from './Line.vue'
+import Line from './components/Line'
 
 const version: String = process.env.VERSION
 
