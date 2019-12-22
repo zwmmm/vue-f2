@@ -1,0 +1,76 @@
+import Core from '@antv/f2/lib/core'
+// TODO time-cat 按需加载
+import '@antv/f2/lib/scale/time-cat'
+
+const { Chart } = Core
+
+export default {
+    name: 'FChart',
+    props: {
+        data: {
+            type: [Object, Array],
+            require: true
+        },
+        width: {
+            type: Number,
+            default: 500
+        },
+        height: {
+            type: Number,
+            default: 300
+        },
+        padding: {
+            type: [Array, Number, String],
+            default: 'auto'
+        },
+        appendPadding: {
+            type: Number,
+            default: 15
+        },
+        animate: {
+            type: Boolean,
+            default: false
+        },
+        syncY: {
+            type: Boolean,
+            default: false
+        },
+        defs: {
+            type: Object,
+            default: () => ({})
+
+        }
+    },
+    watch: {
+        data(value) {
+            // 更新 chart
+            this.chart.changeData(value)
+        }
+    },
+    created() {
+        this.components = []
+    },
+    render(h) {
+        return h('canvas', { ref: 'canvas' }, this.$slots.default)
+    },
+    mounted() {
+        this.chart = new Chart({
+            el: this.$refs.canvas,
+            width: this.width,
+            height: this.height,
+            padding: this.padding,
+            appendPadding: this.appendPadding,
+            animate: this.animate,
+            pixelRatio: window.devicePixelRatio,
+        })
+
+        this.chart.source(this.data, this.defs)
+        this.components.forEach(fn => fn(this.chart))
+        this.chart.render()
+    },
+    methods: {
+        get(key) {
+            return this.chart.get(key)
+        }
+    }
+}
