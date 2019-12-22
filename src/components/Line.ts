@@ -1,9 +1,9 @@
-import Base from '../mixins/base'
+import ComponentBase from '../mixins/componentBase'
 import '@antv/f2/lib/geom/line'
 
 export default {
     name: 'FLine',
-    mixins: [Base],
+    mixins: [ComponentBase],
     mounted() {
         this.components.push(
             chart => {
