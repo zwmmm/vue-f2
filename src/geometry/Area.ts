@@ -1,14 +1,10 @@
 import GeometryBase from '../mixins/geometryBase'
-import '@antv/f2/lib/geom/line'
+import '@antv/f2/lib/geom/area'
 
 export default {
-    name: 'FLine',
+    name: 'FArea',
     mixins: [GeometryBase],
     props: {
-        generatePoints: {
-            type: Boolean,
-            default: false
-        },
         sortable: {
             type: Boolean,
             default: true
@@ -17,7 +13,7 @@ export default {
     created() {
         this.components.push(
             chart => {
-                this.init(chart.line({
+                this.init(chart.area({
                     generatePoints: this.generatePoints,
                     sortable: this.sortable,
                     startOnZero: this.startOnZero,

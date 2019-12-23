@@ -1,23 +1,13 @@
 import GeometryBase from '../mixins/geometryBase'
-import '@antv/f2/lib/geom/line'
+import '@antv/f2/lib/geom/polygon'
 
 export default {
-    name: 'FLine',
+    name: 'FPolygon',
     mixins: [GeometryBase],
-    props: {
-        generatePoints: {
-            type: Boolean,
-            default: false
-        },
-        sortable: {
-            type: Boolean,
-            default: true
-        }
-    },
     created() {
         this.components.push(
             chart => {
-                this.init(chart.line({
+                this.init(chart.polygon({
                     generatePoints: this.generatePoints,
                     sortable: this.sortable,
                     startOnZero: this.startOnZero,

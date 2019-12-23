@@ -1,23 +1,19 @@
 import GeometryBase from '../mixins/geometryBase'
-import '@antv/f2/lib/geom/line'
+import '@antv/f2/lib/geom/path'
 
 export default {
-    name: 'FLine',
+    name: 'FPath',
     mixins: [GeometryBase],
     props: {
         generatePoints: {
             type: Boolean,
             default: false
         },
-        sortable: {
-            type: Boolean,
-            default: true
-        }
     },
     created() {
         this.components.push(
             chart => {
-                this.init(chart.line({
+                this.init(chart.path({
                     generatePoints: this.generatePoints,
                     sortable: this.sortable,
                     startOnZero: this.startOnZero,
