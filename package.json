@@ -1,5 +1,5 @@
 {
-    "name": "vue-f2",
+    "name": "vue-mcharts",
     "version": "1.0.0",
     "description": "vue 版移动端图表库",
     "main": "dist/index.min.js",

@@ -1,11 +1,11 @@
 declare const _default: {
     name: string;
     mixins: {
-        props: {};
         computed: {
             components(): any;
+            plugins(): any;
         };
-        render: (h: any) => any;
+        render(h: any): any;
     }[];
     props: {
         name: {
