@@ -48,12 +48,16 @@ export default {
         }
     },
     created() {
+        // 子组件会一个个往这里面塞回调
         this.components = []
+        // 子组件填充插件
+        this.plugins = []
     },
     render(h) {
         return h('canvas', { ref: 'canvas' }, this.$slots.default)
     },
     mounted() {
+        // 实例化 chart
         this.chart = new Chart({
             el: this.$refs.canvas,
             width: this.width,
@@ -62,10 +66,14 @@ export default {
             appendPadding: this.appendPadding,
             animate: this.animate,
             pixelRatio: window.devicePixelRatio,
+            plugins: this.plugins
         })
 
+        // 装载数据
         this.chart.source(this.data, this.defs)
+        // 拼凑图表
         this.components.forEach(fn => fn(this.chart))
+        // 渲染到 dom 上面
         this.chart.render()
     },
     methods: {

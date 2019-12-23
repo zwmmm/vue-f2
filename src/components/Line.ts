@@ -4,7 +4,7 @@ import '@antv/f2/lib/geom/line'
 export default {
     name: 'FLine',
     mixins: [ComponentBase],
-    mounted() {
+    created() {
         this.components.push(
             chart => {
                 this.init(chart.line())
