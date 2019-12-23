@@ -1,7 +1,7 @@
-import Chart from './components/Chart'
-import Line from './components/Line'
-import Axis from './components/Axis'
-import Legend from './components/Legend'
+import Chart from './core/Chart'
+import Line from './geometry/Line'
+import Axis from './core/Axis'
+import Legend from './core/Legend'
 
 const version: String = process.env.VERSION
 

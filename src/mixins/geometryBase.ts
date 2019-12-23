@@ -21,11 +21,6 @@ export default {
             type: [String, Number]
         }
     },
-    computed: {
-        components() {
-            return this.$parent.components
-        }
-    },
     methods: {
         init(chart) {
             chart.position(this.position)

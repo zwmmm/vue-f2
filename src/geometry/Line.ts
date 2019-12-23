@@ -1,4 +1,4 @@
-import ComponentBase from '../mixins/componentBase'
+import ComponentBase from '../mixins/geometryBase'
 import '@antv/f2/lib/geom/line'
 
 export default {
