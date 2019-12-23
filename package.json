@@ -1,34 +1,35 @@
 {
-    "name"           : "vue-f2",
-    "version"        : "1.0.0",
-    "description"    : "vue 版移动端图表库",
-    "main"           : "dist/index.min.js",
-    "module"         : "dist/index.esm.min.js",
-    "types"          : "dist/index.d.ts",
-    "scripts"        : {
-        "build": "bili --format cjs-min --format esm-min"
+    "name": "vue-f2",
+    "version": "1.0.0",
+    "description": "vue 版移动端图表库",
+    "main": "dist/index.min.js",
+    "module": "dist/index.esm.min.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "rimraf ./dist && bili --format cjs-min --format esm-min"
     },
-    "keywords"       : [
+    "keywords": [
         "vue",
         "chart",
         "f2",
         "mobile"
     ],
-    "author"         : "zwmmm",
-    "license"        : "ISC",
+    "author": "zwmmm",
+    "license": "ISC",
     "devDependencies": {
-        "bili"                     : "^4.8.1",
+        "bili": "^4.8.1",
+        "rimraf": "^3.0.0",
         "rollup-plugin-typescript2": "^0.25.3",
-        "rollup-plugin-vue"        : "5.1.1",
-        "typescript"               : "^3.7.3",
-        "vue"                      : "^2.6.11",
-        "vue-template-compiler"    : "^2.6.11"
+        "rollup-plugin-vue": "5.1.1",
+        "typescript": "^3.7.3",
+        "vue": "^2.6.11",
+        "vue-template-compiler": "^2.6.11"
     },
-    "files"          : [
+    "files": [
         "dist",
         "package.json"
     ],
-    "dependencies"   : {
+    "dependencies": {
         "@antv/f2": "^3.5.0-beta.1"
     }
 }

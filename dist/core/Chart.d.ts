@@ -43,6 +43,10 @@ declare const _default: {
     mounted(): void;
     methods: {
         get(key: any): any;
+        /**
+         * 清除辅助元素
+         */
+        clearGuide(): void;
     };
 };
 export default _default;

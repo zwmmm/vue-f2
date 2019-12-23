@@ -1,5 +1,6 @@
-import Chart from './components/Chart';
-import Line from './components/Line';
-import Axis from './components/Axis';
+import Chart from './core/Chart';
+import Line from './geometry/Line';
+import Axis from './core/Axis';
+import Legend from './core/Legend';
 declare const version: String;
-export { version, Line, Chart, Axis };
+export { version, Line, Chart, Axis, Legend };
