@@ -136,7 +136,27 @@ export default {
                 chart.legend(this.name, {
                     position: this.position,
                     align: this.align,
-                    verticalAlign: this.verticalAlign
+                    verticalAlign: this.verticalAlign,
+                    itemWidth: this.itemWidth,
+                    showTitle: this.showTitle,
+                    titleStyle: this.titleStyle,
+                    offsetX: this.offsetX,
+                    offsetY: this.offsetY,
+                    titleGap: this.titleGap,
+                    itemGap: this.itemGap,
+                    itemMarginBottom: this.itemMarginBottom,
+                    wordSpace: this.wordSpace,
+                    unCheckStyle: this.unCheckStyle,
+                    itemFormatter: this.itemFormatter,
+                    marker: this.marker,
+                    valueStyle: this.valueStyle,
+                    nameStyle: this.nameStyle,
+                    joinString: this.joinString,
+                    triggerOn: this.triggerOn,
+                    selectedMode: this.selectedMode,
+                    clickable: this.clickable,
+                    onClick: this.onClick,
+                    custom: this.custom,
                 })
             }
         )
