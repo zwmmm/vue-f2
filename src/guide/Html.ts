@@ -1,32 +1,29 @@
 import { addPlugin } from './utils'
 import Base from '../mixins/base'
-import '@antv/f2/lib/component/guide/text'
+import '@antv/f2/lib/component/guide/html'
 import Guide from '../mixins/guide'
 
 export default {
-    name: 'FGuideText',
+    name: 'FGuideLHtml',
     mixins: [Base, Guide],
     props: {
-        top: {
-            type: Boolean,
-            default: true
-        },
         position: {
             type: [Array, Function],
             require: true
         },
-        content: {
+        alignX: {
             type: String,
-            require: true
+            default: 'center',
+            validator(value): Boolean {
+                return ['left', 'center', 'right'].includes(value)
+            }
         },
-        style: {
-            type: Object,
-            default: () => ({
-                fill: '#666', // 文本颜色
-                fontSize: '12', // 文本大小
-                fontWeight: 'bold', // 文本粗细
-                rotate: Math.PI / 4 // 文本旋转，以弧度为单位
-            })
+        alignY: {
+            type: String,
+            default: 'middle',
+            validator(value): Boolean {
+                return ['top', 'middle', 'bottom'].includes(value)
+            }
         },
         limitInPlot: {
             type: Boolean,
@@ -40,19 +37,22 @@ export default {
             type: Number,
             default: 0
         },
+        html: {
+            type: String,
+            require: true
+        }
     },
     created() {
         addPlugin(this.plugins)
         this.components.push(
             chart => {
                 this.guide = chart.guide().line({
-                    top: this.top,
                     position: this.position,
-                    content: this.content,
-                    style: this.style,
-                    limitInPlot: this.limitInPlot,
-                    offsetX: this.offsetX,
+                    staalignXrt: this.alignX,
                     offsetY: this.offsetY,
+                    offsetX: this.offsetX,
+                    limitInPlot: this.limitInPlot,
+                    html: this.html,
                 })
             }
         )

@@ -79,6 +79,12 @@ export default {
     methods: {
         get(key) {
             return this.chart.get(key)
+        },
+        /**
+         * 清除辅助元素
+         */
+        clearGuide() {
+            this.chart.guide().clear()
         }
     }
 }
