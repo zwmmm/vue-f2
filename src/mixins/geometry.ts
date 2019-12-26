@@ -1,18 +1,5 @@
 import Base from './base'
-
-/**
- * 检验 props 如果是对象的形式 是否存在 key
- */
-function propsValidator(options: any): Boolean {
-    if (
-        Object.prototype.toString.call(options) === '[Object object]'
-    ) {
-        if (options.field && options.value) return true
-        console.warn('Geometry 的参数如果是 Object 类型，必须带有 field 和 value 字段')
-        return false
-    }
-    return true
-}
+import { optionsValidator } from '../utils'
 
 export default {
     mixins: [Base],
@@ -23,15 +10,15 @@ export default {
         },
         color: {
             type: [String, Object],
-            validator: propsValidator
+            validator: optionsValidator
         },
         shape: {
             type: [String, Object],
-            validator: propsValidator
+            validator: optionsValidator
         },
         size: {
             type: [String, Object],
-            validator: propsValidator
+            validator: optionsValidator
         },
         style: {
             type: Object,

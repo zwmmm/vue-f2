@@ -1,12 +1,5 @@
 export default {
-    computed: {
-        components() {
-            return this.$parent.components
-        },
-        plugins() {
-            return this.$parent.plugins
-        }
-    },
+    inject: ['components', 'plugins'],
     render(h) {
         return h(null)
     }

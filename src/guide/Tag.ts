@@ -1,11 +1,11 @@
 import { addPlugin } from './utils'
-import Base from '../mixins/base'
+
 import '@antv/f2/lib/component/guide/tag'
 import Guide from '../mixins/guide'
 
 export default {
     name: 'FGuideTag',
-    mixins: [Base, Guide],
+    mixins: [Guide],
     props: {
         top: {
             type: Boolean,

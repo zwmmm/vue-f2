@@ -1,11 +1,10 @@
 import { addPlugin } from './utils'
-import Base from '../mixins/base'
 import Guide from '../mixins/guide'
 import '@antv/f2/lib/component/guide/arc'
 
 export default {
     name: 'FGuideArc',
-    mixins: [Base, Guide],
+    mixins: [Guide],
     props: {
         top: {
             type: Boolean,

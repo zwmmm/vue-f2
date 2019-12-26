@@ -1,6 +1,7 @@
 import Core from '@antv/f2/lib/core'
 // TODO time-cat 按需加载
 import '@antv/f2/lib/scale/time-cat'
+import { optionsValidator } from '../utils'
 
 const { Chart } = Core
 
@@ -38,14 +39,17 @@ export default {
         defs: {
             type: Object,
             default: () => ({})
-
-        }
+        },
     },
     watch: {
         data(value) {
             // 更新 chart
             this.chart.changeData(value)
         }
+    },
+    provide: {
+        components: this.components,
+        plugins: this.plugins,
     },
     created() {
         // 子组件会一个个往这里面塞回调
@@ -71,6 +75,8 @@ export default {
 
         // 装载数据
         this.chart.source(this.data, this.defs)
+        // 选择坐标系
+        this.chart.coord('rect')
         // 拼凑图表
         this.components.forEach(fn => fn(this.chart))
         // 渲染到 dom 上面

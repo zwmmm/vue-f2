@@ -1,11 +1,10 @@
 import { addPlugin } from './utils'
-import Base from '../mixins/base'
 import '@antv/f2/lib/component/guide/html'
 import Guide from '../mixins/guide'
 
 export default {
     name: 'FGuideLHtml',
-    mixins: [Base, Guide],
+    mixins: [Guide],
     props: {
         position: {
             type: [Array, Function],

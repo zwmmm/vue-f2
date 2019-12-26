@@ -1,11 +1,11 @@
 import { addPlugin } from './utils'
-import Base from '../mixins/base'
+
 import '@antv/f2/lib/component/guide/line'
 import Guide from '../mixins/guide'
 
 export default {
     name: 'FGuideLine',
-    mixins: [Base, Guide],
+    mixins: [Guide],
     props: {
         top: {
             type: Boolean,
