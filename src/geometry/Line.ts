@@ -1,4 +1,4 @@
-import GeometryBase from '../mixins/geometryBase'
+import GeometryBase from '../mixins/geometry'
 import '@antv/f2/lib/geom/line'
 
 export default {
