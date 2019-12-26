@@ -38,7 +38,14 @@ declare const _default: {
     watch: {
         data(value: any): void;
     };
-    created(): void;
+    data(): {
+        components: any[];
+        plugins: any[];
+    };
+    provide(): {
+        components: any;
+        plugins: any;
+    };
     render(h: any): any;
     mounted(): void;
     methods: {

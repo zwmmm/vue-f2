@@ -1,10 +1,7 @@
 declare const _default: {
     name: string;
     mixins: {
-        computed: {
-            components(): any;
-            plugins(): any;
-        };
+        inject: string[];
         render(h: any): any;
     }[];
     props: {

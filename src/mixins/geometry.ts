@@ -20,7 +20,7 @@ export default {
             type: [String, Object],
             validator: optionsValidator
         },
-        style: {
+        styles: {
             type: Object,
         },
         adjust: {
@@ -53,7 +53,7 @@ export default {
                 { label: 'color', value: this.color },
                 { label: 'shape', value: this.shape },
                 { label: 'size', value: this.size },
-                { label: 'style', value: this.style },
+                { label: 'style', value: this.styles },
                 { label: 'adjust', value: this.adjust },
                 { label: 'animate', value: this.animate },
             ].forEach(item => {

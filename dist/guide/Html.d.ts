@@ -1,17 +1,15 @@
 import '@antv/f2/lib/component/guide/html';
 declare const _default: {
     name: string;
-    mixins: ({
-        computed: {
-            components(): any;
-            plugins(): any;
-        };
-        render(h: any): any;
-    } | {
+    mixins: {
+        mixins: {
+            inject: string[];
+            render(h: any): any;
+        }[];
         methods: {
             repaint(): void;
         };
-    })[];
+    }[];
     props: {
         position: {
             type: (ArrayConstructor | FunctionConstructor)[];

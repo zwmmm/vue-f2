@@ -47,15 +47,17 @@ export default {
             this.chart.changeData(value)
         }
     },
-    provide: {
-        components: this.components,
-        plugins: this.plugins,
+    data() {
+        return {
+            components: [],
+            plugins: []
+        }
     },
-    created() {
-        // 子组件会一个个往这里面塞回调
-        this.components = []
-        // 子组件填充插件
-        this.plugins = []
+    provide() {
+        return {
+            components: this.components,
+            plugins: this.plugins,
+        }
     },
     render(h) {
         return h('canvas', { ref: 'canvas' }, this.$slots.default)

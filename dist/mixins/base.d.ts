@@ -1,8 +1,5 @@
 declare const _default: {
-    computed: {
-        components(): any;
-        plugins(): any;
-    };
+    inject: string[];
     render(h: any): any;
 };
 export default _default;

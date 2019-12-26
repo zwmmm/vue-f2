@@ -3,35 +3,31 @@ declare const _default: {
     name: string;
     mixins: {
         mixins: {
-            computed: {
-                components(): any;
-                plugins(): any;
-            };
+            inject: string[];
             render(h: any): any;
         }[];
         props: {
-            name: {
-                type: StringConstructor;
-                require: boolean;
-            };
             position: {
-                type: StringConstructor;
+                type: (StringConstructor | ArrayConstructor)[];
                 require: boolean;
             };
             color: {
-                type: StringConstructor;
+                type: (StringConstructor | ObjectConstructor)[];
+                validator: typeof import("../utils").optionsValidator;
             };
             shape: {
-                type: StringConstructor;
+                type: (StringConstructor | ObjectConstructor)[];
+                validator: typeof import("../utils").optionsValidator;
             };
             size: {
-                type: (StringConstructor | NumberConstructor)[];
+                type: (StringConstructor | ObjectConstructor)[];
+                validator: typeof import("../utils").optionsValidator;
             };
             style: {
                 type: ObjectConstructor;
             };
             adjust: {
-                type: (StringConstructor | ObjectConstructor | ArrayConstructor)[];
+                type: (StringConstructor | ArrayConstructor | ObjectConstructor)[];
             };
             animate: {
                 type: (ObjectConstructor | BooleanConstructor)[];

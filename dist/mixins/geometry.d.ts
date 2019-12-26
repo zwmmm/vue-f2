@@ -1,34 +1,31 @@
+import { optionsValidator } from '../utils';
 declare const _default: {
     mixins: {
-        computed: {
-            components(): any;
-            plugins(): any;
-        };
+        inject: string[];
         render(h: any): any;
     }[];
     props: {
-        name: {
-            type: StringConstructor;
-            require: boolean;
-        };
         position: {
-            type: StringConstructor;
+            type: (StringConstructor | ArrayConstructor)[];
             require: boolean;
         };
         color: {
-            type: StringConstructor;
+            type: (StringConstructor | ObjectConstructor)[];
+            validator: typeof optionsValidator;
         };
         shape: {
-            type: StringConstructor;
+            type: (StringConstructor | ObjectConstructor)[];
+            validator: typeof optionsValidator;
         };
         size: {
-            type: (StringConstructor | NumberConstructor)[];
+            type: (StringConstructor | ObjectConstructor)[];
+            validator: typeof optionsValidator;
         };
-        style: {
+        styles: {
             type: ObjectConstructor;
         };
         adjust: {
-            type: (StringConstructor | ObjectConstructor | ArrayConstructor)[];
+            type: (StringConstructor | ArrayConstructor | ObjectConstructor)[];
         };
         animate: {
             type: (ObjectConstructor | BooleanConstructor)[];
